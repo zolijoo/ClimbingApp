@@ -150,6 +150,7 @@
         android:textSize="15sp"
         android:textColorHint="#FFFFFF"
         android:textColor="#FFFFFF"
+        android:importantForAutofill="no"
 
         app:layout_constraintBottom_toTopOf="@+id/whiteButton"
         app:layout_constraintStart_toStartOf="parent" />
