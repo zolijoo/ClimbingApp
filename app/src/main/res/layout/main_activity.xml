@@ -12,102 +12,14 @@
         android:layout_height="60dp"
         android:layout_marginStart="135dp"
         android:layout_marginEnd="135dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/start_btn"
         android:text="Start"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/modelSelectorSpinner"
+        app:layout_constraintBottom_toTopOf="@+id/modelInstTV"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/whiteButton"
-        android:layout_width="100dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/diff_btns"
-        android:text="White"
-        app:layout_constraintBottom_toTopOf="@+id/yellowButton"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/blueButton"
-        android:layout_width="100dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/b_btn"
-        android:text="Blue"
-        app:layout_constraintBottom_toTopOf="@+id/greenButton"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/yellowButton"
-        android:layout_width="100dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/y_btn"
-        android:text="Yellow"
-        app:layout_constraintBottom_toTopOf="@+id/redButton"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/greenButton"
-        android:layout_width="100dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/g_btn"
-        android:text="Green"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/blackButton"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/redButton"
-        android:layout_width="100dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/r_btn"
-        android:onClick="bt_redOnClick"
-        android:text="Red"
-        app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/blackButton"
-        android:layout_width="100dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/black_btn"
-        android:onClick="bt_blackOnClick"
-        android:text="Black"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/stopSessionB"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="135dp"
-        android:layout_marginEnd="135dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/stop_btn"
-        android:onClick="bt_sessionStopOnClick"
-        android:text="Stop"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -125,54 +37,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
-    <Switch
-        android:id="@+id/sentSwitch"
-        android:layout_width="100dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/send_switch"
-        android:text="Sent"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/blueButton"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <EditText
-        android:id="@+id/attemptsInput"
-        android:layout_width="100dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="20dp"
-        android:hint="Attempts"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:textSize="15sp"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
-        android:importantForAutofill="no"
-
-        app:layout_constraintBottom_toTopOf="@+id/whiteButton"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <View
-        android:id="@+id/view2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="30dp"
-        android:background="#808080"
-        app:layout_constraintBottom_toTopOf="@+id/sentSwitch"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="20dp"
-        android:background="#808080"
-        app:layout_constraintBottom_toTopOf="@+id/predictButton"
-        tools:layout_editor_absoluteX="53dp" />
-
     <View
         android:id="@+id/view3"
         android:layout_width="match_parent"
@@ -189,31 +53,58 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 
-    <Button
-        android:id="@+id/predictButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
-        android:layout_marginEnd="130dp"
-        android:layout_marginBottom="20dp"
-        android:text="Start prediction"
-        app:layout_constraintBottom_toTopOf="@+id/stopSessionB"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Spinner
         android:id="@+id/modelSelectorSpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
         android:layout_marginEnd="150dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="300dp"
         android:background="#FFFFFF"
         android:minWidth="200dp"
         android:minHeight="48dp"
         android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/modelInstTV"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="5dp"
+        android:text="Select model:"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/modelSelectorSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/filesB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:text="Files"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toStartOf="@+id/uploadB"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/uploadB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="50dp"
+        android:text="Upload"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
