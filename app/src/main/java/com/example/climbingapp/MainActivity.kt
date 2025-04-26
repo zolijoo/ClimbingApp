@@ -49,7 +49,9 @@ class MainActivity : ComponentActivity() {
     private val modelMap = mapOf(
         "LSTM" to "lstm.tflite",
         "GRU" to "gru.tflite",
-        "1dConv" to "conv.tflite"
+        "1dConv" to "conv.tflite",
+        "BiLSTM" to "bilstm.tflite",
+        "Transformer" to "transformer.tflite"
     )
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
@@ -76,7 +78,7 @@ class MainActivity : ComponentActivity() {
             }
         }
         val modelSpinner: Spinner = findViewById(R.id.modelSelectorSpinner)
-        val modelOptions = listOf("LSTM", "GRU", "1dConv")
+        val modelOptions = listOf("LSTM", "GRU", "1dConv", "BiLSTM", "Transformer")
         val spinnerAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, modelOptions)
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         modelSpinner.adapter = spinnerAdapter
