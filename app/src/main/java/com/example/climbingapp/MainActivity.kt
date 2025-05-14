@@ -73,7 +73,6 @@ class MainActivity : ComponentActivity() {
                     this, Manifest.permission.WRITE_EXTERNAL_STORAGE
                 ) != PackageManager.PERMISSION_GRANTED
             ) {
-                // Request the permission if not granted
                 requestPermissionLauncher.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
             }
         }
@@ -123,7 +122,6 @@ class MainActivity : ComponentActivity() {
             if (sessionFiles != null && sessionFiles.isNotEmpty()) {
                 val fileNames = sessionFiles.map { it.name }.toTypedArray()
 
-                // Show a dialog with the list of saved session files
                 AlertDialog.Builder(this)
                     .setTitle("Select a Session File")
                     .setItems(fileNames) { _, which ->
@@ -185,7 +183,7 @@ class MainActivity : ComponentActivity() {
             } else {
                 null
             }
-        } ?: "uploaded_${System.currentTimeMillis()}.csv" // Default if name retrieval fails
+        } ?: "uploaded_${System.currentTimeMillis()}.csv"
 
         if (!fName.endsWith(".csv", ignoreCase = true)) {
             Toast.makeText(this, "Please select a CSV file.", Toast.LENGTH_SHORT).show()

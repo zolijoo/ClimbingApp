@@ -49,10 +49,8 @@ class SessionActivity : AppCompatActivity() {
         ActivityResultContracts.RequestPermission()
     ) { isGranted: Boolean ->
         if (isGranted) {
-            // Permission is granted, proceed with your operation
             Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show()
         } else {
-            // Permission is denied, show a message to the user
             Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show()
         }
     }
@@ -65,7 +63,6 @@ class SessionActivity : AppCompatActivity() {
                     this, Manifest.permission.WRITE_EXTERNAL_STORAGE
                 ) != PackageManager.PERMISSION_GRANTED
             ) {
-                // Request the permission if not granted
                 requestPermissionLauncher.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
             }
         }
@@ -87,13 +84,11 @@ class SessionActivity : AppCompatActivity() {
         whiteButton.setOnClickListener {
             val attemptsText = attemptsInput.text.toString()
 
-            // Check if the input is empty
             if (attemptsText.isEmpty()) {
                 Toast.makeText(this, "Please enter the number of attempts.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Parse the input to an integer
             val attempts = attemptsText.toIntOrNull()
             if (attempts == null || attempts < 0) {
                 Toast.makeText(this, "Please enter a valid non-negative number.", Toast.LENGTH_SHORT).show()
@@ -104,13 +99,11 @@ class SessionActivity : AppCompatActivity() {
         blueButton.setOnClickListener {
             val attemptsText = attemptsInput.text.toString()
 
-            // Check if the input is empty
             if (attemptsText.isEmpty()) {
                 Toast.makeText(this, "Please enter a valid number of attempts.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Parse the input to an integer
             val attempts = attemptsText.toIntOrNull()
             if (attempts == null || attempts < 0) {
                 Toast.makeText(this, "Please enter a valid non-negative number.", Toast.LENGTH_SHORT).show()
@@ -121,13 +114,11 @@ class SessionActivity : AppCompatActivity() {
         yellowButton.setOnClickListener {
             val attemptsText = attemptsInput.text.toString()
 
-            // Check if the input is empty
             if (attemptsText.isEmpty()) {
                 Toast.makeText(this, "Please enter a valid number of attempts.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Parse the input to an integer
             val attempts = attemptsText.toIntOrNull()
             if (attempts == null || attempts < 0) {
                 Toast.makeText(this, "Please enter a valid non-negative number.", Toast.LENGTH_SHORT).show()
@@ -138,13 +129,11 @@ class SessionActivity : AppCompatActivity() {
         greenButton.setOnClickListener {
             val attemptsText = attemptsInput.text.toString()
 
-            // Check if the input is empty
             if (attemptsText.isEmpty()) {
                 Toast.makeText(this, "Please enter a valid number of attempts.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Parse the input to an integer
             val attempts = attemptsText.toIntOrNull()
             if (attempts == null || attempts < 0) {
                 Toast.makeText(this, "Please enter a valid non-negative number.", Toast.LENGTH_SHORT).show()
@@ -155,13 +144,11 @@ class SessionActivity : AppCompatActivity() {
         redButton.setOnClickListener {
             val attemptsText = attemptsInput.text.toString()
 
-            // Check if the input is empty
             if (attemptsText.isEmpty()) {
                 Toast.makeText(this, "Please enter a valid number of attempts.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Parse the input to an integer
             val attempts = attemptsText.toIntOrNull()
             if (attempts == null || attempts < 0) {
                 Toast.makeText(this, "Please enter a valid non-negative number.", Toast.LENGTH_SHORT).show()
@@ -172,13 +159,11 @@ class SessionActivity : AppCompatActivity() {
         blackButton.setOnClickListener {
             val attemptsText = attemptsInput.text.toString()
 
-            // Check if the input is empty
             if (attemptsText.isEmpty()) {
                 Toast.makeText(this, "Please enter a valid number of attempts.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Parse the input to an integer
             val attempts = attemptsText.toIntOrNull()
             if (attempts == null || attempts < 0) {
                 Toast.makeText(this, "Please enter a valid non-negative number.", Toast.LENGTH_SHORT).show()
@@ -272,7 +257,6 @@ class SessionActivity : AppCompatActivity() {
                 Toast.makeText(this, "Failed to Save", Toast.LENGTH_SHORT).show()
             }
         } else {
-            // Close session without saving
             Toast.makeText(this, "Session Ended", Toast.LENGTH_SHORT).show()
         }
         finish()
@@ -316,7 +300,6 @@ class SessionActivity : AppCompatActivity() {
         }
         labels.clear()
 
-        //val inputArray = Array(1) { Array(T) { FloatArray(5) } }
         val numWindows = difficulties.size - T + 1
         for (startIndex in 0 until numWindows) {
             classifyWindow(startIndex)
@@ -337,7 +320,6 @@ class SessionActivity : AppCompatActivity() {
             inputArray[0][i][4] = timeToSeconds(times[index])
         }
 
-        // Create ByteBuffer for the model
         val inputByteBuffer = ByteBuffer.allocateDirect(4 * T * 5).apply {
             order(ByteOrder.nativeOrder())
         }
@@ -354,15 +336,12 @@ class SessionActivity : AppCompatActivity() {
             order(ByteOrder.nativeOrder())
         }
 
-        // Run inference
         tflite.run(inputByteBuffer, outputBuffer)
         outputBuffer.rewind()
 
-        // Retrieve output and classify
         val prediction = outputBuffer.float
         val label = if (prediction > 0.5) "Fast" else "Slow"
 
-        // Add label for the entire window
         for (i in 0 until T) {
             labels.add(label)
         }
