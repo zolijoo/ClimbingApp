@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <Button
+        android:id="@+id/startSessionB"
+        android:layout_width="230dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="135dp"
+        android:background="@drawable/start_btn"
+        android:text="@string/start"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Spinner
+        android:id="@+id/modelSelectorSpinner"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:minWidth="200dp"
+        android:minHeight="48dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modelInstTV" />
+
+    <TextView
+        android:id="@+id/modelInstTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="@string/select_model_hint"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startSessionB" />
+
+    <Button
+        android:id="@+id/filesB"
+        android:layout_width="130dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="50dp"
+        android:drawableStart="@drawable/folder"
+        android:text="@string/files"
+        android:textAllCaps="false"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toStartOf="@+id/uploadB"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/uploadB"
+        android:layout_width="130dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="50dp"
+        android:drawableStart="@drawable/upload"
+        android:backgroundTint="#FFFFFF"
+        android:text="@string/upload"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/filesB" />
+
+    <Button
+        android:id="@+id/statB"
+        android:layout_width="130dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#FFFFFF"
+        android:drawableStart="@drawable/statistics"
+        android:text="@string/statistics"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/uploadB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/classifyB" />
+
+    <Button
+        android:id="@+id/classifyB"
+        android:layout_width="130dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#FFFFFF"
+        android:drawableStart="@drawable/classification"
+        android:text="@string/classify"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/filesB"
+        app:layout_constraintEnd_toStartOf="@+id/statB"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/yearSpinner"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/chartSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/modelSelectorSpinner" />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="400dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/classifyB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yearSpinner" />
+
+    <Spinner
+        android:id="@+id/chartSpinner"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toStartOf="@+id/yearSpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modelSelectorSpinner" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
